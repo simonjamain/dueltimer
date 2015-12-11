@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <button id="btnStart" type="button" name="button">start</button>
+    <script type="text/javascript">
+    var gongSound = new Audio('sounds/gong.mp3');
+    var btnStart = document.getElementById('btnStart');
+
+    btnStart.onclick = startDuel;
+
+    function startDuel()
+    {
+      btnStart.disabled = true;
+      setTimeout(function(){
+        endDuel();
+      }, 5000 + Math.random()*10000);
+    }
+
+    function endDuel()
+    {
+      gongSound.play();
+      btnStart.disabled = false;
+    }
+    </script>
+  </body>
+</html>
